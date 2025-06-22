@@ -27,8 +27,8 @@ hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('bash', bash);
 
 defineSlots<{
-	beforeMessage(props: { message: ChatMessage }): ChatMessage;
-	default: { message: ChatMessage };
+	beforeMessage?: (props: { message: ChatMessage }) => unknown;
+	default?: (props: { message: ChatMessage }) => unknown;
 }>();
 
 const { message } = toRefs(props);
